@@ -5,6 +5,7 @@ import connectDB from './config/db.js'
 import bookingRoutes from './routes/bookingRoutes.js'
 import charityRoutes from './routes/charityRoutes.js'
 import authRoutes from './routes/authRoutes.js'
+import testimonialRoutes from './routes/testimonialRoutes.js'
 
 dotenv.config()
 connectDB()
@@ -21,6 +22,9 @@ app.use('/api/bookings', bookingRoutes)
 app.use('/api/charity', charityRoutes)
 app.use('/api/auth', authRoutes)
 
+
+// Add after other routes:
+app.use('/api/testimonials', testimonialRoutes)
 // Test route
 app.get('/', (req, res) => {
   res.json({ message: 'LTCS Backend Running!' })
