@@ -6,6 +6,7 @@ import bookingRoutes from './routes/bookingRoutes.js'
 import charityRoutes from './routes/charityRoutes.js'
 import authRoutes from './routes/authRoutes.js'
 import testimonialRoutes from './routes/testimonialRoutes.js'
+import galleryRoutes from './routes/galleryRoutes.js'
 
 dotenv.config()
 connectDB()
@@ -21,7 +22,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/bookings', bookingRoutes)
 app.use('/api/charity', charityRoutes)
 app.use('/api/auth', authRoutes)
-
+app.use('/api/gallery', galleryRoutes)
 
 // Add after other routes:
 app.use('/api/testimonials', testimonialRoutes)
